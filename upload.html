@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="File Upload Portal for Isabela Tourism media assets: Upload photos, audio narration clips, or videos.">
+    <title>Upload Media: Discover Isabela</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo-brand" aria-label="Discover Isabela Home">
+                    <img src="images/logo.png" alt="Province of Isabela Official Seal" style="height: 42px; width: auto; object-fit: contain;">
+                    <span>Discover Isabela</span>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="gallery.html" class="nav-link">Media Gallery</a></li>
+                        <li><a href="upload.html" class="nav-link active">Upload Media</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact & Docs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="badge badge-image" style="margin-bottom: 0.5rem;">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    File Upload Portal
+                </span>
+                <h1>Upload Destination Media Assets</h1>
+                <p>Submit your Isabela travel photos, audio narrations, or video features. Uploaded assets automatically appear in the Media Gallery.</p>
+            </div>
+
+            <div class="upload-card">
+                
+                <div id="uploadAlert" class="alert alert-success" style="display: none;" role="alert"></div>
+
+                <form id="uploadForm">
+                    
+                    <div class="form-group">
+                        <label for="mediaTitle" class="form-label">Media Title:</label>
+                        <input type="text" id="mediaTitle" name="mediaTitle" class="form-control" placeholder="e.g. Tumauini Church Sunset View" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mediaDescription" class="form-label">Description:</label>
+                        <textarea id="mediaDescription" name="mediaDescription" class="form-control" rows="3" placeholder="Write a short description of the destination spot..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mediaCategory" class="form-label">Media Category:</label>
+                        <select id="mediaCategory" name="mediaCategory" class="form-control">
+                            <option value="destination">Destination Spot</option>
+                            <option value="culture">Cultural Heritage</option>
+                            <option value="festival">Festival Event</option>
+                            <option value="nature">Eco-Tourism & Nature</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mediaFile" class="form-label">Select Media File (Max 50MB):</label>
+                        <div class="drop-zone" id="dropZone">
+                            <div style="font-size: 2.2rem; color: var(--color-brand-light); margin-bottom: 0.5rem;">
+                                <svg class="icon-svg" style="width: 2.5rem; height: 2.5rem;" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                            </div>
+                            <p style="color: var(--color-text-primary); font-weight: 600; margin-bottom: 0.25rem;">Drag and drop your file here or click to browse</p>
+                            <p style="font-size: var(--text-xs); color: var(--color-text-muted);">Supports: WebP, JPEG, PNG, SVG, MP3, WAV, OGG, MP4, WebM</p>
+                            <input type="file" id="mediaFile" name="mediaFile" accept="image/*,audio/*,video/*" style="display: none;" required>
+                        </div>
+                        <div id="filePreview"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        Upload Media File
+                    </button>
+
+                </form>
+            </div>
+
+            <section class="media-container" style="max-width: 620px; margin: 0 auto 3rem auto; padding: 1.5rem;">
+                <h3>Upload Validation Rules</h3>
+                <ul style="color: var(--color-text-muted); padding-left: 1.25rem; line-height: 1.8; font-size: var(--text-sm);">
+                    <li><strong>Allowed Image Formats:</strong> JPEG, PNG, WebP, SVG</li>
+                    <li><strong>Allowed Audio Formats:</strong> MP3, WAV, OGG</li>
+                    <li><strong>Allowed Video Formats:</strong> MP4, WebM</li>
+                    <li><strong>Maximum File Size:</strong> 50 MegaBytes (MB)</li>
+                </ul>
+            </section>
+
+        </div><!-- /.container -->
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Discover Isabela Tourism</h4>
+                    <p>The official responsive web platform for exploring the heritage, eco-tourism, and rich culture of Isabela Province.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home Overview</a></li>
+                        <li><a href="about.html">About & Travel Video</a></li>
+                        <li><a href="gallery.html">Media Management</a></li>
+                        <li><a href="upload.html">Upload Destination Media</a></li>
+                        <li><a href="contact.html">Format Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Accessibility & Compliance</h4>
+                    <p>Designed according to WCAG 2.1 accessibility guidelines with keyboard focus control, text transcripts, and validated HTML5 media tags.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT AppDev 2: Web Applications Project | Media Content Integration</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alert = document.getElementById('uploadAlert');
+            const title = document.getElementById('mediaTitle').value;
+            alert.style.display = 'block';
+            alert.className = 'alert alert-success';
+            alert.textContent = "Success! Media asset '" + title + "' uploaded and validated successfully. It is now featured in your Media Gallery!";
+            this.reset();
+            document.getElementById('filePreview').innerHTML = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,10 +1,6 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.7.3"
-    }
-  },
+  "cleanUrls": true,
   "routes": [
     {
       "src": "/css/(.*)",
@@ -31,8 +27,24 @@
       "dest": "/uploads/$1"
     },
     {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/gallery",
+      "dest": "/gallery.html"
+    },
+    {
+      "src": "/upload",
+      "dest": "/upload.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/index.html"
     }
   ]
 }

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Media Gallery for Isabela Tourism: Images, Audio Narrations, and Travel Videos.">
+    <title>Media Gallery: Discover Isabela</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo-brand" aria-label="Discover Isabela Home">
+                    <img src="images/logo.png" alt="Province of Isabela Official Seal" style="height: 42px; width: auto; object-fit: contain;">
+                    <span>Discover Isabela</span>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="gallery.html" class="nav-link active">Media Gallery</a></li>
+                        <li><a href="upload.html" class="nav-link">Upload Media</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact & Docs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="badge badge-image" style="margin-bottom: 0.5rem;">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    Media Management
+                </span>
+                <h1>Interactive Media Gallery</h1>
+                <p>View, filter, play, edit, and delete travel images, audio tracks, and videos across Isabela Province.</p>
+            </div>
+
+            <!-- Category READ Filter Buttons -->
+            <div class="gallery-filters" role="group" aria-label="Filter media gallery by type">
+                <button class="filter-btn active" data-filter="all">All Assets</button>
+                <button class="filter-btn" data-filter="images">Images</button>
+                <button class="filter-btn" data-filter="audio">Audio Tracks</button>
+                <button class="filter-btn" data-filter="videos">Videos</button>
+            </div>
+
+            <!-- Media Cards Grid -->
+            <div class="cards-grid" id="galleryGrid">
+                
+                <!-- Core Built-in Image Cards -->
+                <article class="card gallery-item" data-category="images">
+                    <div class="card-media" style="padding: 0.85rem; background: var(--color-overlay); min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/ilagan-sanctuary.png" alt="Ilagan Sanctuary Eco-Park" class="lightbox-trigger" style="max-height: 170px; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span class="badge badge-image">IMAGE (PNG)</span>
+                            <span style="font-size: var(--text-xs); color: var(--color-text-muted);">800 KB</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: var(--text-base);">Ilagan Sanctuary & Japanese Tunnel</h3>
+                        <p class="card-text" style="font-size: var(--text-xs); margin-bottom: 0.5rem;">A premier eco-tourism destination in Santa Victoria Caves featuring zip lines and historical Japanese tunnels.</p>
+                        <p style="font-size: var(--text-xs); color: var(--color-text-dim); margin-bottom: 0.85rem;">File: ilagan-sanctuary.png</p>
+                        <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--color-border);"><span style="font-size: var(--text-xs); color: var(--color-text-dim);">Built-in Core Asset</span></div>
+                    </div>
+                </article>
+
+                <article class="card gallery-item" data-category="images">
+                    <div class="card-media" style="padding: 0.85rem; background: var(--color-overlay); min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/dibulo-falls.png" alt="Dibulo Falls Dinapigue" class="lightbox-trigger" style="max-height: 170px; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span class="badge badge-image">IMAGE (PNG)</span>
+                            <span style="font-size: var(--text-xs); color: var(--color-text-muted);">750 KB</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: var(--text-base);">Dibulo Falls: Dinapigue</h3>
+                        <p class="card-text" style="font-size: var(--text-xs); margin-bottom: 0.5rem;">One of the highest cascading waterfalls in the region surrounded by pristine rainforests.</p>
+                        <p style="font-size: var(--text-xs); color: var(--color-text-dim); margin-bottom: 0.85rem;">File: dibulo-falls.png</p>
+                        <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--color-border);"><span style="font-size: var(--text-xs); color: var(--color-text-dim);">Built-in Core Asset</span></div>
+                    </div>
+                </article>
+
+                <article class="card gallery-item" data-category="images">
+                    <div class="card-media" style="padding: 0.85rem; background: var(--color-overlay); min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/abuan-river.png" alt="Abuan River Eco-Adventure" class="lightbox-trigger" style="max-height: 170px; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span class="badge badge-image">IMAGE (PNG)</span>
+                            <span style="font-size: var(--text-xs); color: var(--color-text-muted);">820 KB</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: var(--text-base);">Abuan River Eco-Adventure</h3>
+                        <p class="card-text" style="font-size: var(--text-xs); margin-bottom: 0.5rem;">Home to extreme river kayaking, rappelling, and rich aquatic life in Northern Sierra Madre.</p>
+                        <p style="font-size: var(--text-xs); color: var(--color-text-dim); margin-bottom: 0.85rem;">File: abuan-river.png</p>
+                        <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--color-border);"><span style="font-size: var(--text-xs); color: var(--color-text-dim);">Built-in Core Asset</span></div>
+                    </div>
+                </article>
+
+                <!-- Core Built-in Audio Card -->
+                <article class="card gallery-item" data-category="audio">
+                    <div class="card-media" style="padding: 0.85rem; background: var(--color-overlay); min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 100%; text-align: center;">
+                            <div style="color: var(--color-accent-gold); margin-bottom: 0.5rem;">
+                                <svg class="icon-svg" style="width: 2.5rem; height: 2.5rem;" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                            </div>
+                            <audio controls style="width: 100%;">
+                                <source src="audio/isabela-environmental-nature.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span class="badge badge-audio">AUDIO (MP3)</span>
+                            <span style="font-size: var(--text-xs); color: var(--color-text-muted);">80 KB</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: var(--text-base);">Environmental Nature Soundscape</h3>
+                        <p class="card-text" style="font-size: var(--text-xs); margin-bottom: 0.5rem;">Calming natural ambient soundtrack recorded in Isabela eco-sanctuary.</p>
+                        <p style="font-size: var(--text-xs); color: var(--color-text-dim); margin-bottom: 0.85rem;">File: isabela-environmental-nature.mp3</p>
+                        <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--color-border);"><span style="font-size: var(--text-xs); color: var(--color-text-dim);">Built-in Core Asset</span></div>
+                    </div>
+                </article>
+
+                <!-- Core Built-in Video Card -->
+                <article class="card gallery-item" data-category="videos">
+                    <div class="card-media" style="padding: 0.85rem; background: var(--color-overlay); min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                        <video controls style="width: 100%; max-height: 170px;">
+                            <source src="videos/isabela video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span class="badge badge-video">VIDEO (MP4)</span>
+                            <span style="font-size: var(--text-xs); color: var(--color-text-muted);">44.4 MB</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: var(--text-base);">Isabela Promotional Travel Video</h3>
+                        <p class="card-text" style="font-size: var(--text-xs); margin-bottom: 0.5rem;">Official tourism travel presentation showcasing Cagayan Valley highlights.</p>
+                        <p style="font-size: var(--text-xs); color: var(--color-text-dim); margin-bottom: 0.85rem;">File: isabela video.mp4</p>
+                        <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--color-border);"><span style="font-size: var(--text-xs); color: var(--color-text-dim);">Built-in Core Asset</span></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div><!-- /.container -->
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Discover Isabela Tourism</h4>
+                    <p>The official responsive web platform for exploring the heritage, eco-tourism, and rich culture of Isabela Province.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home Overview</a></li>
+                        <li><a href="about.html">About & Travel Video</a></li>
+                        <li><a href="gallery.html">Media Management</a></li>
+                        <li><a href="upload.html">Upload Destination Media</a></li>
+                        <li><a href="contact.html">Format Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Accessibility & Compliance</h4>
+                    <p>Designed according to WCAG 2.1 accessibility guidelines with keyboard focus control, text transcripts, and validated HTML5 media tags.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT AppDev 2: Web Applications Project | Media Content Integration</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

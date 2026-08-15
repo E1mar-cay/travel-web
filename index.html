@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Isabela: Official Tourism and Cultural Heritage Portal featuring responsive media, audio tours, video presentations, and interactive gallery.">
+    <meta name="author" content="IT AppDev 2 Student Project">
+    <title>Home: Tourism & Heritage | Discover Isabela</title>
+    
+    <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Core Design Tokens & Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Site Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo-brand" aria-label="Discover Isabela Home">
+                    <img src="images/logo.png" alt="Province of Isabela Official Seal" style="height: 42px; width: auto; object-fit: contain;">
+                    <span>Discover Isabela</span>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="gallery.html" class="nav-link">Media Gallery</a></li>
+                        <li><a href="upload.html" class="nav-link">Upload Media</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact & Docs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Background Looped Audio: audio/isabela-environmental-nature.mp3 -->
+            <audio id="bgAudio" autoplay loop preload="auto">
+                <source src="audio/isabela-environmental-nature.mp3" type="audio/mpeg">
+                <source src="audio/isabela-environmental-nature.wav" type="audio/wav">
+                Your browser does not support HTML5 audio playback.
+            </audio>
+
+            <!-- Hero Section -->
+            <section class="hero-section" aria-label="Featured Isabela Destination Banner">
+                <picture class="hero-picture">
+                    <source media="(min-width: 1025px)" srcset="images/ilagan-sanctuary.png">
+                    <source media="(min-width: 601px)" srcset="images/ilagan-sanctuary.png">
+                    <img src="images/ilagan-sanctuary.png" alt="Panoramic view of Isabela eco-tourism sanctuary and natural landscape" class="hero-img lightbox-trigger">
+                </picture>
+                
+                <div class="hero-overlay">
+                    <span class="hero-tag">
+                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        Queen Province of the North
+                    </span>
+                    <h1 class="hero-title">Experience the Beauty of Isabela</h1>
+                    <p class="hero-desc">Explore majestic waterfalls, historical sanctuaries, and eco-adventure trails through immersive media assets and guided audio tours.</p>
+                    <div class="btn-group">
+                        <a href="about.html" class="btn btn-primary">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            Explore Destinations
+                        </a>
+                        <a href="gallery.html" class="btn btn-secondary">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            Media Gallery
+                        </a>
+                        <button id="toggleBgAudioBtn" class="btn btn-secondary" style="background: rgba(255,255,255,0.95); color: var(--color-text-primary);">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                            <span class="audio-btn-label">Ambient Music: Playing</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section" style="margin-bottom: 3.5rem;">
+                <div class="section-header">
+                    <h2>Welcome to Isabela's Eco-Tourism Portal</h2>
+                    <p>Discover top destination spots, cultural heritage landmarks, and interactive media guides designed for all travelers.</p>
+                </div>
+                
+                <!-- Destination Cards Grid -->
+                <div class="cards-grid" id="homepageCardsGrid">
+                    
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="images/ilagan-sanctuary.png" alt="Ilagan Sanctuary eco-park featuring lush greenery and recreation area" class="lightbox-trigger" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-image" style="margin-bottom: 0.5rem; width: fit-content;">
+                                <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                Eco Park
+                            </span>
+                            <h3 class="card-title">Ilagan Sanctuary & Japanese Tunnel</h3>
+                            <p class="card-text">A premier eco-tourism destination in Santa Victoria Caves featuring zip lines, wildlife, and historical Japanese tunnels.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="images/dibulo-falls.png" alt="Dibulo Falls in Dinapigue Isabela with cascading natural waters" class="lightbox-trigger" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-image" style="margin-bottom: 0.5rem; width: fit-content;">
+                                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                Waterfall
+                            </span>
+                            <h3 class="card-title">Dibulo Falls: Dinapigue</h3>
+                            <p class="card-text">One of the highest cascading waterfalls in the region surrounded by pristine rainforests and rich biodiversity.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="images/abuan-river.png" alt="Abuan River eco-adventure trail with clear flowing river water" class="lightbox-trigger" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-image" style="margin-bottom: 0.5rem; width: fit-content;">
+                                <svg class="icon-svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                Adventure
+                            </span>
+                            <h3 class="card-title">Abuan River Eco-Adventure</h3>
+                            <p class="card-text">Home to extreme river kayaking, rappelling, and rich aquatic life situated within the Northern Sierra Madre Biosphere.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-media">
+                            <img src="images/japanese-tunnel.png" alt="Japanese Tunnel historical WWII landmark in Ilagan Sanctuary" class="lightbox-trigger" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-image" style="margin-bottom: 0.5rem; width: fit-content;">
+                                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                                Historical Site
+                            </span>
+                            <h3 class="card-title">Japanese Tunnel WWII Heritage</h3>
+                            <p class="card-text">Preserved World War II subterranean tunnels constructed by Japanese forces located within the Ilagan Eco-Sanctuary complex.</p>
+                        </div>
+                    </article>
+                    
+                </div>
+            </section>
+
+        </div><!-- /.container -->
+    </main><!-- /#main-content -->
+
+    <!-- Lightbox Modal Preview -->
+    <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview Modal">
+        <button class="modal-close" id="closeModal" aria-label="Close image preview">
+            <svg class="icon-svg" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <img class="modal-content" id="modalImage" alt="Enlarged media view">
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Discover Isabela Tourism</h4>
+                    <p>The official responsive web platform for exploring the heritage, eco-tourism, and rich culture of Isabela Province.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home Overview</a></li>
+                        <li><a href="about.html">About & Travel Video</a></li>
+                        <li><a href="gallery.html">Media Management</a></li>
+                        <li><a href="upload.html">Upload Destination Media</a></li>
+                        <li><a href="contact.html">Format Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--color-text-primary); margin-bottom: 0.5rem;">Accessibility & Compliance</h4>
+                    <p>Designed according to WCAG 2.1 accessibility guidelines with keyboard focus control, text transcripts, and validated HTML5 media tags.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT AppDev 2: Web Applications Project | Media Content Integration</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
