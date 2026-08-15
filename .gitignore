@@ -1,0 +1,4 @@
+# Git Ignore for Travel Web Project
+.tempmediaStorage
+.user_uploaded
+*.log
