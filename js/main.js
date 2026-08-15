@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (alert) {
                     alert.style.display = 'block';
                     alert.className = 'alert alert-success';
-                    alert.textContent = `Success! Media asset "${uploadItem.title}" uploaded successfully. It is now live on your Homepage and Media Gallery!`;
+                    alert.innerHTML = `Success! Media asset <strong>"${uploadItem.title}"</strong> uploaded successfully. <a href="gallery.html" style="color: var(--color-brand); font-weight: 700; text-decoration: underline;">View in Media Gallery</a> or <a href="index.html" style="color: var(--color-brand); font-weight: 700; text-decoration: underline;">View on Homepage</a>.`;
                 }
 
                 uploadForm.reset();

@@ -142,17 +142,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        document.getElementById('uploadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const alert = document.getElementById('uploadAlert');
-            const title = document.getElementById('mediaTitle').value;
-            alert.style.display = 'block';
-            alert.className = 'alert alert-success';
-            alert.textContent = "Success! Media asset '" + title + "' uploaded and validated successfully. It is now featured in your Media Gallery!";
-            this.reset();
-            document.getElementById('filePreview').innerHTML = '';
-        });
-    </script>
+
 </body>
 </html>
